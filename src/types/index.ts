@@ -1,5 +1,5 @@
 import { FC, ReactElement } from "react";
-import { ThemedStyledProps } from "styled-components";
+import { DefaultTheme, ThemedStyledProps } from "styled-components";
 import { IMainState } from "../state/reducer";
 import { FileLoaderFunction } from "../utils/fileLoaders";
 
@@ -19,7 +19,7 @@ export type IHeaderOverride = (
   nextDocument: () => void
 ) => ReactElement<any, any> | null;
 
-export interface ITheme {
+export interface ITheme extends DefaultTheme {
   primary?: string;
   secondary?: string;
   tertiary?: string;
