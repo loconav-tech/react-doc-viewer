@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { DocRenderer, IStyledProps } from "../../types";
 import PDFPages from "./components/pages/PDFPages";
 import PDFControls from "./components/PDFControls";
+import PDFDownload from "./components/PDFDownload";
 import { PDFProvider } from "./state";
 
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -14,8 +15,9 @@ const PDFRenderer: DocRenderer = ({ mainState }) => {
   return (
     <PDFProvider mainState={mainState}>
       <Container id="pdf-renderer" data-testid="pdf-renderer">
-        <PDFControls />
+        <PDFDownload />
         <PDFPages />
+        <PDFControls />
       </Container>
     </PDFProvider>
   );
