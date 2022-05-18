@@ -18,8 +18,8 @@ const ImageProxyRenderer: DocRenderer = (props) => {
         {currentDocument?.fileData && (
           <DownloadButton
             id={`${currentDocument.fileType}-download-${currentFileNo}`}
-            href={currentDocument?.fileData as string}
-            download={currentDocument?.uri}
+            href={currentDocument?.uri}
+            download={currentDocument?.title}
           >
             <DownloadIcon />
           </DownloadButton>

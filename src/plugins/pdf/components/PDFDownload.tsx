@@ -15,8 +15,8 @@ const PDFDownload: FC<{}> = () => {
       {currentDocument?.fileData && (
         <DownloadButton
           id="pdf-download"
-          href={currentDocument?.fileData as string}
-          download={currentDocument?.uri}
+          href={currentDocument?.uri}
+          download={currentDocument?.title}
         >
           <DownloadIcon />
         </DownloadButton>

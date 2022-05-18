@@ -1,10 +1,9 @@
 import React, { FC, useCallback } from "react";
 import styled, { keyframes } from "styled-components";
 import { setRendererRect } from "../state/actions";
-import { IStyledProps } from "../types";
 import { useDocumentLoader } from "../utils/useDocumentLoader";
 import { useWindowSize } from "../utils/useWindowSize";
-import { LinkButton } from "./common";
+import { DownloadButton } from "./common";
 import { LoadingIcon } from "./icons";
 
 export const ProxyRenderer: FC<{}> = () => {
@@ -65,7 +64,7 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   overflow-y: auto;
-  position: rlative;
+  position: relative;
 `;
 
 const LoadingContainer = styled.div`
@@ -88,14 +87,4 @@ const LoadingIconContainer = styled.div`
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-`;
-
-const DownloadButton = styled(LinkButton)`
-  width: 130px;
-  height: 30px;
-  background-color: ${(props: IStyledProps) => props.theme.primary};
-  @media (max-width: 768px) {
-    width: 125px;
-    height: 25px;
-  }
 `;
