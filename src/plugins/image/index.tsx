@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { DownloadBtnWrapper, DownloadButton } from "../../components/common";
 import { DocRenderer } from "../../types";
+import { DownloadIcon } from "../pdf/components/icons";
 
 const ImageProxyRenderer: DocRenderer = (props) => {
   const {
-    mainState: { currentDocument },
+    mainState: { currentDocument, currentFileNo },
     children,
   } = props;
 
@@ -12,6 +14,17 @@ const ImageProxyRenderer: DocRenderer = (props) => {
 
   return (
     <Container id="image-renderer" {...props}>
+      <DownloadBtnWrapper>
+        {currentDocument?.fileData && (
+          <DownloadButton
+            id={`${currentDocument.fileType}-download-${currentFileNo}`}
+            href={currentDocument?.fileData as string}
+            download={currentDocument?.uri}
+          >
+            <DownloadIcon />
+          </DownloadButton>
+        )}
+      </DownloadBtnWrapper>
       {children || (
         <Img id="image-img" src={currentDocument.fileData as string} />
       )}

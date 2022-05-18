@@ -1,12 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import { DownloadBtnWrapper, DownloadButton } from "../../components/common";
 import { DocRenderer } from "../../types";
+import { DownloadIcon } from "../pdf/components/icons";
 
-const MSDocRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
+const MSDocRenderer: DocRenderer = ({
+  mainState: { currentDocument, currentFileNo },
+}) => {
   if (!currentDocument) return null;
 
   return (
     <Container id="msdoc-renderer">
+      <DownloadBtnWrapper>
+        {currentDocument?.fileData && (
+          <DownloadButton
+            id={`${currentDocument.fileType}-download-${currentFileNo}`}
+            href={currentDocument?.fileData as string}
+            download={currentDocument?.uri}
+          >
+            <DownloadIcon />
+          </DownloadButton>
+        )}
+      </DownloadBtnWrapper>
       <IFrame
         id="msdoc-iframe"
         title="msdoc-iframe"

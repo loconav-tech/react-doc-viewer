@@ -1,10 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { DownloadBtnWrapper, DownloadButton } from "../../components/common";
 import { DocRenderer } from "../../types";
 import { textFileLoader } from "../../utils/fileLoaders";
+import { DownloadIcon } from "../pdf/components/icons";
 
-const TXTRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
-  return <Container id="txt-renderer">{currentDocument?.fileData}</Container>;
+const TXTRenderer: DocRenderer = ({
+  mainState: { currentDocument, currentFileNo },
+}) => {
+  return (
+    <Container id="txt-renderer">
+      <DownloadBtnWrapper>
+        {currentDocument?.fileData && (
+          <DownloadButton
+            id={`${currentDocument.fileType}-download-${currentFileNo}`}
+            href={currentDocument?.fileData as string}
+            download={currentDocument?.uri}
+          >
+            <DownloadIcon />
+          </DownloadButton>
+        )}
+      </DownloadBtnWrapper>
+      {currentDocument?.fileData}
+    </Container>
+  );
 };
 
 export default TXTRenderer;

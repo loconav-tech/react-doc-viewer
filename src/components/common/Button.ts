@@ -64,6 +64,24 @@ export const LinkButton = styled.a`
   }
 `;
 
+export const DownloadBtnWrapper = styled.div`
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 22px;
+  z-index: 1;
+  top: 20px;
+`;
+
+export const DownloadButton = styled(LinkButton)`
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+`;
+
 export const ButtonPrimary = styled(Button)``;
 export const ButtonSecondary = styled(Button)`
   ${ButtonSecondaryStyle}

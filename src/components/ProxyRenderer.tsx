@@ -65,6 +65,7 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   overflow-y: auto;
+  position: rlative;
 `;
 
 const LoadingContainer = styled.div`
