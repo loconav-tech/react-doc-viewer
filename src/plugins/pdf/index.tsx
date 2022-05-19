@@ -33,6 +33,7 @@ const Container = styled.div`
   flex-direction: column;
   flex: 1;
   overflow-y: auto;
+  border-radius: 8px;
 
   /* width */
   &::-webkit-scrollbar {

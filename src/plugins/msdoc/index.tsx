@@ -67,6 +67,7 @@ MSDocRenderer.fileLoader = ({ fileLoaderComplete }) => fileLoaderComplete();
 
 const Container = styled.div`
   width: 100%;
+  border-radius: 8px;
 `;
 const IFrame = styled.iframe`
   width: 100%;

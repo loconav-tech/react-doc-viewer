@@ -42,7 +42,7 @@ interface PageWrapperProps {
   last?: boolean;
 }
 const PageWrapper = styled.div<PageWrapperProps>`
-  margin: 20px 0;
+  margin: 0 0 20px 0;
 `;
 const PageTag = styled.div`
   padding: 0 0 10px 10px;
