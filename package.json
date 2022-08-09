@@ -1,11 +1,11 @@
 {
-  "name": "react-doc-viewer",
+  "name": "@loconav-tech/react-doc-viewer",
   "version": "0.1.5",
   "description": "Document viewer for react. Renders online/local documents.",
   "author": "Matthew Mogford",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/Alcumus/react-doc-viewer"
+    "url": "https://github.com/loconav-tech/react-doc-viewer"
   },
   "main": "src/index.tsx",
   "dependencies": {
@@ -33,7 +33,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf build && tsc -p tsconfig-npm.json",
+    "build": "rm -rf build && tsc -p tsconfig-npm.json && cp package.json build/ && cp README.md build/ && cp CHANGELOG.md build/",
+    "prepub": "cp package.json build/",
+    "pub": "cd build && yarn publish",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "version:patch": "npm run version:pre && npm run version:changelog && npm version patch && npm run version:post",
